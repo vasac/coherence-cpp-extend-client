@@ -32,6 +32,7 @@ jobs:
       - name: Run Macaron check-github-actions policy
         uses: oracle/macaron@4ddb55e3c9ef2c77b548be55c557078c4476fd9c # v0.24.0
         with:
-          repo_path: https://github.com/${{ github.repository }}
+          repo_path: ./
+          digest: ${{ github.sha }}
           policy_file: check-github-actions
           policy_purl: pkg:github.com/${{ github.repository }}@${{ github.sha }}
